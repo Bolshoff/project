@@ -6,8 +6,8 @@ import PageCounter from './PageCounter/PageCounter';
 function Pagination() {
   return (
     <div className="pagination">
-      <PageToggleButton />
-      <PageToggleButton />
+      <PageToggleButton title="Prev" />
+      <PageToggleButton title="Next" />
       <PageCounter />
     </div>
   );

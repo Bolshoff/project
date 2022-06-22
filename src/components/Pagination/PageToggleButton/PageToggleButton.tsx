@@ -1,9 +1,13 @@
 import React from 'react';
 import './PageToggleButton.css';
 
-function PageToggleButton() {
+interface PageToggleButtonProps{
+  title: string
+}
+
+function PageToggleButton({ title }: PageToggleButtonProps) {
   return (
-    <button className="page-toggle-button" type="button">Button</button>
+    <button className="page-toggle-button" type="button">{title}</button>
   );
 }
 
