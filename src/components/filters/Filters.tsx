@@ -3,6 +3,8 @@ import './Filters.css';
 import ButtonReset from './ButtonReset/ButtonReset';
 import SortSelect from './select/SortSelect';
 import YearSelect from './select/YearSelect';
+import Checkbox from './checkbox/Checkbox';
+import Pagination from '../Pagination/Pagination';
 
 function Filters() {
   return (
@@ -13,6 +15,8 @@ function Filters() {
       <SortSelect />
       <h2>Год релиза:</h2>
       <YearSelect />
+      <Checkbox />
+      <Pagination />
     </div>
   );
 }
