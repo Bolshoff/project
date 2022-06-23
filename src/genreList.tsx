@@ -76,3 +76,5 @@ export const genres = [
     name: 'вестерн',
   },
 ];
+
+export default genres;

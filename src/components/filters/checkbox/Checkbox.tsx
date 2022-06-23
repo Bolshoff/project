@@ -1,17 +1,14 @@
-import React from 'react';
+import React, { FC } from 'react';
 import './Checkbox.css';
+import { ICheckBox } from '../../../types/types';
 
-
-const Checkbox = () => (
-  <div>
-
-    <input
-      type="checkbox"
-      value="Some text"
-    />
-    {name}
-    {id}
-
+interface CheckboxProps {
+  genre: ICheckBox;
+}
+const Checkbox: FC<CheckboxProps> = ({ genre }) => (
+  <div className="checkbox" key={genre.id}>
+    <input type="checkbox" value="Some text" />
+    {genre.name}
   </div>
 );
 

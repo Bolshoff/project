@@ -1,8 +1,16 @@
 import './CheckboxBlock.css';
-import React from 'react';
+import React, { FC } from 'react';
+import { ICheckBox } from '../../../types/types';
+import Checkbox from './Checkbox';
 
-const CheckboxBlock = () => (
-  <div className="checkbox-block" />
+interface CheckBoxProps {
+    genres: ICheckBox[]
+}
+const CheckboxBlock: FC<CheckBoxProps> = ({ genres }) => (
+  <div className="checkbox-block">
+    {genres.map((genre) => (
+      <Checkbox genre={genre} />
+    ))}
+  </div>
 );
-
 export default CheckboxBlock;
