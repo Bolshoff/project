@@ -1,18 +1,18 @@
 import React from 'react';
 import './Checkbox.css';
 
-function Checkbox() {
-  return (
-    <div className="checkbox-block">
 
-      <input
-        type="checkbox"
-        value="Some text"
-      />
-      Боевик
+const Checkbox = () => (
+  <div>
 
-    </div>
-  );
-}
+    <input
+      type="checkbox"
+      value="Some text"
+    />
+    {name}
+    {id}
+
+  </div>
+);
 
 export default Checkbox;
