@@ -3,6 +3,7 @@ import './ButonReset.css';
 
 function ButtonReset() {
   return (
+
     <button className="button-filters-reset" type="button">Сбросить все фильтры</button>
   );
 }

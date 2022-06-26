@@ -5,7 +5,7 @@ export interface ICheckBox {
 
 export interface IMovies{
   adult: boolean;
-  backdrop_path: string;
+  backdrop_path: string | null;
   genre_ids: number[];
   id: number;
   original_language: string;
@@ -18,4 +18,11 @@ export interface IMovies{
   video: boolean;
   vote_average: number;
   vote_count: number
+}
+
+export interface IsortedArray {
+  popularityToLow: string,
+  popularityToUP: string,
+  ratingToLow: string,
+  ratingToUp: string,
 }

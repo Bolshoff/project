@@ -3,10 +3,9 @@ import './MovieCard.css';
 import { IMovies } from '../../../types/types';
 
 interface MovieCardProps{
-    movie: IMovies
-}
-// const imagePath = movie.poster_path || movie.backdrop_path;
-// <https://image.tmdb.org/t/p/w500/${imagePath}>
+    movie: IMovies,
+    }
+
 const MovieCard:FC<MovieCardProps> = ({ movie }) => (
   <div className="movie-card" key={movie.id}>
     <div className="poster">
