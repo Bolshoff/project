@@ -5,8 +5,7 @@ import { IMovies } from '../../../types/types';
 interface MovieCardProps{
     movie: IMovies
 }
-// const imagePath = movie.poster_path || movie.backdrop_path;
-// <https://image.tmdb.org/t/p/w500/${imagePath}>
+
 const MovieCard:FC<MovieCardProps> = ({ movie }) => (
   <div className="movie-card" key={movie.id}>
     <div className="poster">
@@ -14,8 +13,10 @@ const MovieCard:FC<MovieCardProps> = ({ movie }) => (
     </div>
     <div className="description">
       <div className="usertools">
+        Рейтинг:
+        {' '}
         {movie.vote_average}
-        , fav, mark
+        fav, mark
       </div>
       <div className="movie-title">{movie.title}</div>
       <div className="detailed">Подробнее</div>
