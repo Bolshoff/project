@@ -3,8 +3,8 @@ import './MovieCard.css';
 import { IMovies } from '../../../types/types';
 
 interface MovieCardProps{
-    movie: IMovies
-}
+    movie: IMovies,
+    }
 
 const MovieCard:FC<MovieCardProps> = ({ movie }) => (
   <div className="movie-card" key={movie.id}>
@@ -13,10 +13,8 @@ const MovieCard:FC<MovieCardProps> = ({ movie }) => (
     </div>
     <div className="description">
       <div className="usertools">
-        Рейтинг:
-        {' '}
         {movie.vote_average}
-        fav, mark
+        , fav, mark
       </div>
       <div className="movie-title">{movie.title}</div>
       <div className="detailed">Подробнее</div>

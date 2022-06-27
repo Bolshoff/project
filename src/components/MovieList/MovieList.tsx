@@ -9,7 +9,7 @@ interface MovieListProps{
 
 const MovieList:FC<MovieListProps> = ({ movies }) => (
   <div className="movie-list">
-    {movies.map((movie) => <MovieCard movie={movie} />)}
+    {movies.map((movie) => <MovieCard movie={movie} key={movie.id} />)}
 
   </div>
 );

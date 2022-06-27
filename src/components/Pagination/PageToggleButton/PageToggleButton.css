@@ -7,3 +7,6 @@
     cursor: pointer;
     margin:20px 10px;
 }
+.page-toggle-button:disabled{
+    background-color: #849bf5;
+}

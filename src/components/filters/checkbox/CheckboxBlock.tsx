@@ -9,7 +9,7 @@ interface CheckBoxProps {
 const CheckboxBlock: FC<CheckBoxProps> = ({ genres }) => (
   <div className="checkbox-block">
     {genres.map((genre) => (
-      <Checkbox genre={genre} />
+      <Checkbox genre={genre} key={genre.id} />
     ))}
   </div>
 );
