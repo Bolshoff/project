@@ -1,11 +1,20 @@
 import React from 'react';
 import './ButonReset.css';
+import { useAppDispatch } from '../../../hooks/hooks';
+import { SET_SELECT_VALUE, SET_YEAR_FILTER_VALUE } from '../../../store/actions/actions';
 
-function ButtonReset() {
+const ButtonReset = () => {
+  // const selectValue = useAppSelector((state) => state.setFilterValue.selectValue);
+  // const yearSelectValue = useAppSelector((state) => state.setYearFilterValue.yearFilterValue);
+  const dispatch = useAppDispatch();
+  const resetFilters = () => {
+    dispatch({ type: SET_YEAR_FILTER_VALUE, payload: 2020 });
+    dispatch({ type: SET_SELECT_VALUE, payload: 'Популярные по убыванию' });
+  };
   return (
 
-    <button className="button-filters-reset" type="button">Сбросить все фильтры</button>
+    <button className="button-filters-reset" type="button" onClick={resetFilters}>Сбросить все фильтры</button>
   );
-}
+};
 
 export default ButtonReset;

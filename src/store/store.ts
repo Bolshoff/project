@@ -3,9 +3,10 @@ import changeCurrentPage from './changeCurrentPage';
 import setCardsPerPage from './setCardsPerPage';
 import setSortedCards from './setSortedCards';
 import setFilterValue from './setFilterValue';
+import setYearFilterValue from './setYearFilterValue';
 
 const rootReducer = combineReducers({
-  changeCurrentPage, setCardsPerPage, setSortedCards, setFilterValue,
+  changeCurrentPage, setCardsPerPage, setSortedCards, setFilterValue, setYearFilterValue,
 });
 const store = createStore(rootReducer);
 

@@ -12,6 +12,7 @@ const App = () => {
   const cardsPerPage = useAppSelector((state) => state.setCardsPerPage.cardsPerPage);
   const movieData = useAppSelector((state) => state.setSortedCards.sortedCards);
   const selectValue = useAppSelector((state) => state.setFilterValue.selectValue);
+  const yearSelectValue = useAppSelector((state) => state.setYearFilterValue.yearFilterValue);
 
   const sortedMovies = movieData.sort((a: any, b: any) => {
     if (selectValue === 'Популярные по убыванию') {
@@ -27,7 +28,7 @@ const App = () => {
       return a.popularity - b.popularity;
     }
     return a.popularity - b.popularity;
-  });
+  }).filter((item: any) => item.release_date.split('-')[0].includes(String(yearSelectValue)));
 
   const indexOfLastCard = currentPage * cardsPerPage;
   const indexOfFirstCard = indexOfLastCard - cardsPerPage;
