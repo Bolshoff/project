@@ -4,9 +4,15 @@ import setCardsPerPage from './setCardsPerPage';
 import setSortedCards from './setSortedCards';
 import setFilterValue from './setFilterValue';
 import setYearFilterValue from './setYearFilterValue';
+import setCheckboxFilter from './setCheckboxFilter';
 
 const rootReducer = combineReducers({
-  changeCurrentPage, setCardsPerPage, setSortedCards, setFilterValue, setYearFilterValue,
+  changeCurrentPage,
+  setCardsPerPage,
+  setSortedCards,
+  setFilterValue,
+  setYearFilterValue,
+  setCheckboxFilter,
 });
 const store = createStore(rootReducer);
 

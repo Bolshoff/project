@@ -4,6 +4,8 @@ export const SET_CARDS_PER_PAGE = 'SET_CARDS_PER_PAGE';
 export const SET_SORTED_CARDS = 'SET_SORTED_CARDS';
 export const SET_SELECT_VALUE = 'SET_SELECT_VALUE';
 export const SET_YEAR_FILTER_VALUE = 'SET_YEAR_FILTER_VALUE';
+export const SET_CHECKBOX_FILTER = 'SET_CHECKBOX_FILTER';
+export const DELETE_CHECKBOX_FILTER = 'DELETE_CHECKBOX_FILTER';
 
 export const incrementCurrentPage = (currentPage: number) => ({
   type: INCREMENT_CURRENT_PAGE,

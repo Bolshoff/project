@@ -4,8 +4,6 @@ import { useAppDispatch } from '../../../hooks/hooks';
 import { SET_SELECT_VALUE, SET_YEAR_FILTER_VALUE } from '../../../store/actions/actions';
 
 const ButtonReset = () => {
-  // const selectValue = useAppSelector((state) => state.setFilterValue.selectValue);
-  // const yearSelectValue = useAppSelector((state) => state.setYearFilterValue.yearFilterValue);
   const dispatch = useAppDispatch();
   const resetFilters = () => {
     dispatch({ type: SET_YEAR_FILTER_VALUE, payload: 2020 });
