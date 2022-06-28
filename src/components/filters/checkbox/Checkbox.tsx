@@ -2,18 +2,20 @@ import React, { FC } from 'react';
 import './Checkbox.css';
 import { ICheckBox } from '../../../types/types';
 import { useAppDispatch, useAppSelector } from '../../../hooks/hooks';
-import { SET_CHECKBOX_FILTER } from '../../../store/actions/actions';
+
+import { DELETE_CHECKBOX_FILTER, SET_CHECKBOX_FILTER } from '../../../store/actions/actions';
 
 interface CheckboxProps {
   genre: ICheckBox;
 }
 const Checkbox: FC<CheckboxProps> = ({ genre }) => {
-  const checkboxFilter = useAppSelector((state) => state.setCheckboxFilter.checkboxFilter);
   const dispatch = useAppDispatch();
   const onChange = (e: any) => {
     const isChecked = e.target.checked;
     if (isChecked) {
-      dispatch(SET_CHECKBOX_FILTER, e.target.value);
+      dispatch({ type: SET_CHECKBOX_FILTER, payload: e.target.value });
+    } else {
+      dispatch({ type: DELETE_CHECKBOX_FILTER, payload: e.target.value });
     }
   };
 

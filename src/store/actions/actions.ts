@@ -27,3 +27,8 @@ export const setSortedCards = (sortedCards: object) => ({
   type: SET_SORTED_CARDS,
   sortedCards,
 });
+export const removeCheckbox = (index: any) => ({
+  type: DELETE_CHECKBOX_FILTER,
+  payload: index,
+
+});
