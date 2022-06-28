@@ -6,6 +6,7 @@ import Filters from './components/filters/Filters';
 import MovieList from './components/MovieList/MovieList';
 
 import { useAppSelector } from './hooks/hooks';
+import AuthorizationModal from './components/Authorization/AuthorizationModal';
 
 const App = () => {
   const currentPage = useAppSelector((state) => state.changeCurrentPage.currentPage);
@@ -13,7 +14,7 @@ const App = () => {
   const movieData = useAppSelector((state) => state.setSortedCards.sortedCards);
   const selectValue = useAppSelector((state) => state.setFilterValue.selectValue);
   const yearSelectValue = useAppSelector((state) => state.setYearFilterValue.yearFilterValue);
-
+  const authorizationModal = useAppSelector((state) => state.showAuthorizationModal.authorizModal);
   const sortedMovies = movieData.sort((a: any, b: any) => {
     if (selectValue === 'Популярные по убыванию') {
       return b.popularity - a.popularity;
@@ -33,7 +34,7 @@ const App = () => {
   const indexOfLastCard = currentPage * cardsPerPage;
   const indexOfFirstCard = indexOfLastCard - cardsPerPage;
   const currentCards = sortedMovies.slice(indexOfFirstCard, indexOfLastCard);
-
+  // const showAuthorizationModal = true;
   return (
     <div className="app">
       <Header />
@@ -41,6 +42,7 @@ const App = () => {
 
         <Filters />
         <MovieList movies={currentCards} />
+        <AuthorizationModal show={authorizationModal} />
       </div>
 
     </div>

@@ -5,6 +5,7 @@ import setSortedCards from './setSortedCards';
 import setFilterValue from './setFilterValue';
 import setYearFilterValue from './setYearFilterValue';
 import setCheckboxFilter from './setCheckboxFilter';
+import showAuthorizationModal from './showAuthorizationModal';
 
 const rootReducer = combineReducers({
   changeCurrentPage,
@@ -13,6 +14,7 @@ const rootReducer = combineReducers({
   setFilterValue,
   setYearFilterValue,
   setCheckboxFilter,
+  showAuthorizationModal,
 });
 const store = createStore(rootReducer);
 

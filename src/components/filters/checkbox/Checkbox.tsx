@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import './Checkbox.css';
 import { ICheckBox } from '../../../types/types';
-import { useAppDispatch, useAppSelector } from '../../../hooks/hooks';
+import { useAppDispatch } from '../../../hooks/hooks';
 
 import { DELETE_CHECKBOX_FILTER, SET_CHECKBOX_FILTER } from '../../../store/actions/actions';
 
