@@ -6,6 +6,7 @@ import setFilterValue from './setFilterValue';
 import setYearFilterValue from './setYearFilterValue';
 import setCheckboxFilter from './setCheckboxFilter';
 import showAuthorizationModal from './showAuthorizationModal';
+import setLoginedUser from './setLoginedUser';
 
 const rootReducer = combineReducers({
   changeCurrentPage,
@@ -15,6 +16,7 @@ const rootReducer = combineReducers({
   setYearFilterValue,
   setCheckboxFilter,
   showAuthorizationModal,
+  setLoginedUser,
 });
 const store = createStore(rootReducer);
 

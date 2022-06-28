@@ -16,7 +16,9 @@ const AuthorizationModal: FC<AuthorizationModalProps> = ({ show }) => {
     dispatch({ type: 'hideAuthorizationModal', payload: false });
   };
   return (
+
     <div className="authorization-modal">
+
       <div className="authorization-modal-content">
         <div className="authorization-modal-header">
           <h4 className="authorization-modal-title">Log in</h4>
