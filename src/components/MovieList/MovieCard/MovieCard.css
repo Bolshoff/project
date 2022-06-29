@@ -24,6 +24,8 @@
 }
 .usertools{
     height: 50px;
+    display: flex;
+    justify-content: space-around;
 }
 .movie-title{
     height: 200px;
@@ -33,4 +35,35 @@
 .poster-image{
     height: 100%;
     width: 100%;
+}
+.favorite-icon{
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    margin-top: 5px;
+    background: url("./img/star.svg") no-repeat;
+}
+.bookmark-icon{
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    margin-top: 5px;
+    background-image: url("./img/bookmark.svg");
+}
+.favorite{
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    margin-top: 5px;
+    background: url("./img/staryellow.svg") no-repeat;
+}
+.marked{
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    margin-top: 5px;
+    background: url("./img/bookmarkblack.svg") no-repeat;
+}
+.rating{
+    margin-top: 5px;
 }

@@ -16,21 +16,32 @@ const App = () => {
   const yearSelectValue = useAppSelector((state) => state.setYearFilterValue.yearFilterValue);
   const authorizationModal = useAppSelector((state) => state.showAuthorizationModal.authorizModal);
   const dispatch = useAppDispatch();
-  const sortedMovies = movieData.sort((a: any, b: any) => {
-    if (selectValue === 'Популярные по убыванию') {
-      return b.popularity - a.popularity;
+  let sortedMovies = movieData.filter((item: any) => {
+    if (selectValue === 'Избранное') {
+      return item.className === 'favorite';
     }
-    if (selectValue === 'Рейтинг по убыванию') {
-      return b.vote_average - a.vote_average;
+    if (selectValue === 'Смотреть позже') {
+      return item.className === 'marked';
     }
-    if (selectValue === 'Рейтинг по возрастанию') {
-      return a.vote_average - b.vote_average;
-    }
-    if (selectValue === 'Популярные по возрастанию') {
+    return item;
+  })
+    .sort((a: any, b: any) => {
+      if (selectValue === 'Популярные по убыванию') {
+        return b.popularity - a.popularity;
+      }
+      if (selectValue === 'Рейтинг по убыванию') {
+        return b.vote_average - a.vote_average;
+      }
+      if (selectValue === 'Рейтинг по возрастанию') {
+        return a.vote_average - b.vote_average;
+      }
+      if (selectValue === 'Популярные по возрастанию') {
+        return a.popularity - b.popularity;
+      }
       return a.popularity - b.popularity;
-    }
-    return a.popularity - b.popularity;
-  }).filter((item: any) => item.release_date.split('-')[0].includes(String(yearSelectValue)));
+    }).filter((item: any) => item.release_date.split('-')[0].includes(String(yearSelectValue)));
+
+  if (selectValue === 'Избранное') { sortedMovies = movieData.filter((item: any) => item.className === 'favorite'); }
 
   const indexOfLastCard = currentPage * cardsPerPage;
   const indexOfFirstCard = indexOfLastCard - cardsPerPage;
