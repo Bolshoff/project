@@ -5,6 +5,7 @@ import { SET_SELECT_VALUE } from '../../../store/actions/actions';
 
 const SortSelect = () => {
   const sortSelectValue = useAppSelector((state) => state.setFilterValue.selectValue);
+  const isLogined = useAppSelector((state) => state.setLoginedUser.loginedUser);
   const dispatch = useAppDispatch();
   const sortOptions = [
     { key: 'Популярные по убыванию', type: 'popularityToLow' },
@@ -12,6 +13,14 @@ const SortSelect = () => {
     { key: 'Рейтинг по убыванию', type: 'ratingToLow' },
     { key: 'Рейтинг по возрастанию', type: 'ratingToUp' },
   ];
+
+  const isLoginedSortOptions = [
+    { key: 'Избранные', type: 'favorites' },
+    { key: 'Смотреть позже', type: 'watchlataer' },
+  ];
+  if (isLogined) {
+    sortOptions.push(...isLoginedSortOptions);
+  }
 
   const changeFilterValue = (e: any) => {
     dispatch({ type: SET_SELECT_VALUE, payload: e.target.value });

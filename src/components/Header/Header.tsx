@@ -6,6 +6,7 @@ import LogoutButton from './LogoutButton';
 
 const Header = () => {
   const logined = useAppSelector((state) => state.setLoginedUser.loginedUser);
+
   let button;
   if (!logined) {
     button = <LoginButton />;
@@ -17,6 +18,7 @@ const Header = () => {
     <div className="header">
       <a href="link">Home</a>
       {button}
+
     </div>
   );
 };

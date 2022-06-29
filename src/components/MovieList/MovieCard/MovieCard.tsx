@@ -13,6 +13,8 @@ const MovieCard:FC<MovieCardProps> = ({ movie }) => (
     </div>
     <div className="description">
       <div className="usertools">
+        Рейтинг:
+        {' '}
         {movie.vote_average}
         , fav, mark
       </div>
