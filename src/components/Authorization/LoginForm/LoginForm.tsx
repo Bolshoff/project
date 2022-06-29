@@ -7,13 +7,20 @@ const LoginForm = () => {
   const [password, setPassword] = useState<any>();
   const dispatch = useAppDispatch();
 
+  const setLoginedToLocalstorage = () => {
+    try {
+      localStorage.setItem('isLogined', 'true');
+    } catch (e) {
+      alert('Превышен лимит');
+    }
+  };
   const handlerSubmit = (e: any) => {
     e.preventDefault();
     if (username === UserData.user && password === UserData.password) {
-      console.log(UserData.user, UserData.password);
       dispatch({ type: 'login', payload: true });
       dispatch({ type: 'hideAuthorizationModal', payload: false });
-    }
+      setLoginedToLocalstorage();
+    } else alert('Error: Неверное имя пользователя или пароль');
   };
   return (
     <div className="login-form">

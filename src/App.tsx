@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import Header from './components/Header/Header';
 import './App.css';
 import Filters from './components/filters/Filters';
 import MovieList from './components/MovieList/MovieList';
 
-import { useAppSelector } from './hooks/hooks';
+import { useAppDispatch, useAppSelector } from './hooks/hooks';
 import AuthorizationModal from './components/Authorization/AuthorizationModal';
 
 const App = () => {
@@ -15,6 +15,7 @@ const App = () => {
   const selectValue = useAppSelector((state) => state.setFilterValue.selectValue);
   const yearSelectValue = useAppSelector((state) => state.setYearFilterValue.yearFilterValue);
   const authorizationModal = useAppSelector((state) => state.showAuthorizationModal.authorizModal);
+  const dispatch = useAppDispatch();
   const sortedMovies = movieData.sort((a: any, b: any) => {
     if (selectValue === 'Популярные по убыванию') {
       return b.popularity - a.popularity;
@@ -34,7 +35,12 @@ const App = () => {
   const indexOfLastCard = currentPage * cardsPerPage;
   const indexOfFirstCard = indexOfLastCard - cardsPerPage;
   const currentCards = sortedMovies.slice(indexOfFirstCard, indexOfLastCard);
-  // const showAuthorizationModal = true;
+
+  useEffect(() => {
+    const isLogined = JSON.parse(localStorage.getItem('isLogined') as string);
+    if (isLogined) { dispatch({ type: 'login', payload: true }); }
+  }, []);
+
   return (
     <div className="app">
       <Header />

@@ -6,6 +6,7 @@ function LogoutButton() {
   const dispatch = useAppDispatch();
   const handlerOnCLick = () => {
     dispatch({ type: 'logout', payload: false });
+    localStorage.removeItem('isLogined');
   };
   return (
     <button className="header__login-button" type="button" onClick={handlerOnCLick}>Logout</button>
